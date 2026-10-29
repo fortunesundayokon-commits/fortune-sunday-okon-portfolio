@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The personal portfolio of Fortune Sunday Okon — Computer Science student interested in technology, entrepreneurship, personal growth, and positive social impact.">
+  <title>Fortune Sunday Okon | Technology, Growth & Impact</title>
+  <style>
+    :root {
+      --bg: #071426;
+      --panel: #0d2038;
+      --panel-light: #112945;
+      --text: #f4f7fb;
+      --muted: #b7c5d8;
+      --blue: #78aefc;
+      --line: rgba(183,197,216,.18);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: radial-gradient(circle at 80% 0%, #14365b 0, transparent 32%), var(--bg);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.03em; }
+    .brand span { color: var(--blue); }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover, .textlink:hover { color: var(--blue); }
+    .hero { padding: 100px 0 82px; display: grid; grid-template-columns: 1.45fr .8fr; gap: 60px; align-items: center; }
+    .eyebrow { color: var(--blue); text-transform: uppercase; font-size: .78rem; letter-spacing: .16em; font-weight: 800; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.04; letter-spacing: -.065em; margin: 18px 0 24px; }
+    h1 em { color: var(--blue); font-style: normal; }
+    .lead { color: var(--muted); font-size: 1.15rem; max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 9px; font-weight: 750; border: 1px solid var(--line); }
+    .button.primary { background: var(--blue); color: #061427; border-color: var(--blue); }
+    .button:hover { transform: translateY(-1px); }
+    .hero-card { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(120,174,252,.12), rgba(13,32,56,.9)); border-radius: 24px; padding: 30px; min-height: 310px; display: flex; flex-direction: column; justify-content: space-between; }
+    .monogram { width: 78px; height: 78px; display: grid; place-items: center; border-radius: 20px; background: var(--blue); color: #061427; font-size: 1.8rem; font-weight: 900; letter-spacing: -.06em; }
+    .card-note { color: var(--muted); font-size: .9rem; }
+    section { padding: 66px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 700px; margin-bottom: 30px; }
+    h2 { font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -.045em; line-height: 1.15; margin: 8px 0 14px; }
+    .section-head p, .about-copy { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .tile { padding: 24px; border: 1px solid var(--line); background: rgba(13,32,56,.72); border-radius: 16px; }
+    .tile .number { color: var(--blue); font-size: .8rem; font-weight: 800; letter-spacing: .1em; }
+    .tile h3 { margin: 10px 0 8px; font-size: 1.13rem; }
+    .tile p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .about-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 46px; }
+    .quote { font-size: 1.35rem; line-height: 1.5; font-weight: 700; border-left: 3px solid var(--blue); padding-left: 22px; }
+    .focus-box { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .pill { padding: 7px 12px; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; font-size: .88rem; }
+    .contact { display: flex; justify-content: space-between; align-items: center; gap: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 30px; }
+    .contact p { color: var(--muted); margin-bottom: 0; }
+    footer { padding: 26px 0 38px; color: #90a4bd; font-size: .86rem; display: flex; justify-content: space-between; gap: 16px; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; font-size: .82rem; }
+      .hero { padding: 66px 0 54px; grid-template-columns: 1fr; gap: 28px; }
+      .hero-card { min-height: 220px; }
+      .grid { grid-template-columns: 1fr; }
+      .about-layout { grid-template-columns: 1fr; gap: 22px; }
+      .contact { align-items: flex-start; flex-direction: column; }
+      footer { flex-direction: column; }
+    }
+    @media (max-width: 420px) { .navlinks a:nth-child(2) { display: none; } .wrap { width: min(var(--max), calc(100% - 28px)); } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">FORTUNE <span>SUNDAY OKON</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#interests">Interests</a><a href="#vision">Vision</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Computer Science · Ideas · Impact</div>
+        <h1>Learning today.<br><em>Building for tomorrow.</em></h1>
+        <p class="lead">I'm Fortune Sunday Okon, a Computer Science student at the University of the People, exploring how technology, entrepreneurship, and personal growth can help solve real-world problems.</p>
+        <div class="actions">
+          <a class="button primary" href="#about">Get to know me</a>
+          <a class="button" href="#interests">Explore my interests</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Introduction card">
+        <div class="monogram">FSO</div>
+        <div>
+          <div class="eyebrow">My approach</div>
+          <h3 style="font-size:1.55rem; margin:8px 0;">Learn. Build. Grow.</h3>
+          <p class="card-note">Curious about problems. Open to learning. Focused on turning useful ideas into meaningful action.</p>
+        </div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap about-layout">
+        <div>
+          <div class="eyebrow">A little about me</div>
+          <h2>Curiosity with a purpose.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I'm building my knowledge in Computer Science while learning more about business, communication, and the ways people create positive change. I believe meaningful progress starts with paying attention to real problems, asking better questions, and being willing to learn through action.</p>
+          <p>This portfolio is a growing snapshot of my interests, learning journey, and the ideas I hope to develop. As I complete projects and gain experience, I intend to add them here honestly and clearly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What I'm exploring</div>
+          <h2>Interests that connect ideas to action.</h2>
+          <p>These are areas I care about and want to keep learning in. They are interests and developing goals—not claims that I have already mastered them.</p>
+        </div>
+        <div class="grid">
+          <article class="tile">
+            <div class="number">01 / TECHNOLOGY</div>
+            <h3>Technology & Innovation</h3>
+            <p>Learning how computing and digital tools can be used to address practical challenges.</p>
+          </article>
+          <article class="tile">
+            <div class="number">02 / ENTREPRENEURSHIP</div>
+            <h3>Building Useful Ideas</h3>
+            <p>Exploring how businesses and projects can create value by understanding people's needs.</p>
+          </article>
+          <article class="tile">
+            <div class="number">03 / PEOPLE</div>
+            <h3>Growth & Social Impact</h3>
+            <p>Interested in personal development, youth potential, and opportunities that help people move forward.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision">
+      <div class="wrap about-layout">
+        <div>
+          <div class="eyebrow">Looking ahead</div>
+          <h2>Make what matters.</h2>
+        </div>
+        <div>
+          <p class="quote">I want to keep learning, build practical solutions, and contribute to work that makes a positive difference in people's lives.</p>
+          <p class="about-copy">My next step is to turn curiosity into experience: identify meaningful problems, learn from people affected by them, test ideas responsibly, and improve through feedback.</p>
+          <div class="focus-box">
+            <span class="pill">Computer Science</span><span class="pill">Problem-solving</span><span class="pill">Entrepreneurship</span><span class="pill">Personal growth</span><span class="pill">Positive impact</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="eyebrow">Connect</div>
+            <h2 style="margin-bottom:4px;">Good ideas grow through conversation.</h2>
+            <p>I'm interested in learning from people who care about technology, useful ideas, and positive change.</p>
+          </div>
+          <a class="button primary" href="https://www.uopeople.edu/" target="_blank" rel="noopener noreferrer">University of the People</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year"></span> Fortune Sunday Okon</span>
+    <span>A portfolio in progress · Learn. Build. Grow.</span>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
